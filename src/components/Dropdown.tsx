@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useRef, useState } from "react"
+import { RefObject, useRef, useState } from "react"
 import Input from "./Input"
 import useClickOutside from "../lib/helpers/click-outside"
 
@@ -24,7 +24,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options, value, onChange, re
     const [searchTerm, setSearchTerm] = useState("")
     const dropdownRef = useRef<HTMLDivElement | null>(null)
 
-    useClickOutside(dropdownRef, () => setIsOpen(false))
+    useClickOutside(dropdownRef as RefObject<HTMLElement>, () => setIsOpen(false))
 
     const handleSelect = (optionValue: string) => {
         onChange(optionValue)
