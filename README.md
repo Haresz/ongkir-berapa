@@ -1,50 +1,61 @@
-# React + TypeScript + Vite
+# cek-ongkir
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a [React](https://react.dev/) project bootstrapped with [`Vite`](https://vitejs.dev/).
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Ensure you have the following software installed on your local machine:
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js (version 14.x or later)
+- npm (version 6.x or later)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Haresz/ongkir-berapa
+   cd ongkir-berapa
+   ```
+
+2. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+
+To start the development server, run the following command:
+
+```bash
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Building for Production
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+To build the application for production, run the following command:
+
+```bash
+npm run build
 ```
+
+To start the production server:
+
+```bash
+npm start
+```
+
+## Dummy Data
+
+To use the dummy data for testing purposes, you can log in with the following credentials:
+
+- **Username:** kurir
+- **Password:** P4ket!1
+
+Happy coding!
