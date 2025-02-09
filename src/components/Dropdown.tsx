@@ -13,8 +13,8 @@ interface DropdownOption {
 interface DropdownProps {
     label?: string
     options: DropdownOption[]
-    value: string
-    onChange: (value: string) => void
+    value: string | number | null
+    onChange: (value: DropdownOption) => void
     required?: boolean
     withSearch?: boolean
 }
@@ -26,7 +26,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options, value, onChange, re
 
     useClickOutside(dropdownRef as RefObject<HTMLElement>, () => setIsOpen(false))
 
-    const handleSelect = (optionValue: string) => {
+    const handleSelect = (optionValue: DropdownOption) => {
         onChange(optionValue)
         setIsOpen(false)
         setSearchTerm("")
@@ -68,7 +68,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options, value, onChange, re
                                 <li
                                     key={option.value}
                                     className="px-3 py-2 hover:bg-gray-600 cursor-pointer"
-                                    onClick={() => handleSelect(option.value)}
+                                    onClick={() => handleSelect(option)}
                                 >
                                     {option.label}
                                 </li>
